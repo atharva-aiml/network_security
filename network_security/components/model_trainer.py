@@ -30,7 +30,15 @@ os.environ["MLFLOW_TRACKING_USERNAME"] = "atharva.ai1509"
 os.environ["MLFLOW_TRACKING_PASSWORD"] = "f5905446969631180d3de329669c7a710d5bea1b"
 
 import dagshub
-dagshub.init(repo_owner='atharva.ai1509', repo_name='network_security', mlflow=True)
+dagshub.init(
+    repo_owner='atharva.ai1509',
+    repo_name='network_security',
+    mlflow=True,
+    token=os.getenv("f5905446969631180d3de329669c7a710d5bea1b")  # 🔑 This avoids OAuth prompt
+)
+
+#import dagshub
+#dagshub.init(repo_owner='atharva.ai1509', repo_name='network_security', mlflow=True)
 
 #os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/krishnaik06/networksecurity.mlflow"
 #os.environ["MLFLOW_TRACKING_USERNAME"]="krishnaik06"
